@@ -209,7 +209,7 @@ def save_on_master(*args, **kwargs):
 
 def init_distributed_mode(args):
 
-    if torch.cuda.device_count() == 1: # this if statement came from chat-gpt4o
+    if torch.cuda.device_count() == 1: # bypasses the distributed process
         print('Using single GPU. Skipping distributed initialization.')
         args.distributed = False
         args.gpu = 0
